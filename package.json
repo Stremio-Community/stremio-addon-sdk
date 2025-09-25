@@ -1,0 +1,19 @@
+{
+  "name": "stremio-addon-sdk",
+  "version": "1.0.0",
+  "description": "Community Stremio Addon SDK for modern-day TypeScript developers",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stremio",
+    "stremio addon sdk",
+    "stremio addons",
+    "stremio addon",
+    "typescript",
+    "standard-schema"
+  ],
+  "author": "Sleeyax",
+  "license": "MIT"
+}

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier . --check",
-    "format:fix": "prettier . --write"
+    "format:fix": "prettier . --write",
+    "prepare": "husky"
   },
   "keywords": [
     "stremio",
@@ -18,7 +19,14 @@
   ],
   "author": "Sleeyax",
   "license": "MIT",
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown"
+    ]
+  },
   "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.1",
     "prettier": "^3.6.2"
   }
 }

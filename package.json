@@ -4,7 +4,9 @@
   "description": "Community Stremio Addon SDK for modern-day TypeScript developers",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier . --check",
+    "format:fix": "prettier . --write"
   },
   "keywords": [
     "stremio",
@@ -15,5 +17,8 @@
     "standard-schema"
   ],
   "author": "Sleeyax",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
 }

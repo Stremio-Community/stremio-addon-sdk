@@ -131,6 +131,8 @@ export interface Cache {
   staleError?: number;
 }
 
+export type WithCache<T> = T & Cache;
+
 /**
  * Summarized collection of meta items.
  *

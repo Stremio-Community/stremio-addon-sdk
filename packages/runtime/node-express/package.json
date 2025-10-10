@@ -1,0 +1,23 @@
+{
+  "name": "@stremio-addon/runtime/node-express",
+  "version": "1.0.0",
+  "description": "Node runtime with Express.js for the Community Stremio Addon SDK",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "express": "^5.1.0"
+  },
+  "peerDependencies": {
+    "express": "^5.1.0"
+  }
+}

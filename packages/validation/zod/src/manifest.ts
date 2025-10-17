@@ -651,5 +651,3 @@ export const manifestSchema = z.object({
     })
     .optional(),
 }) satisfies ManifestSchema;
-
-// TODO: add packages for runtimes which implement the addon SDK protocol: node, hono etc.

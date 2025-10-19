@@ -74,7 +74,7 @@ export class AddonBuilder {
     return this.defineResourceHandler("subtitles", handler as Handler);
   }
 
-  build(): AddonInterface {
+  getInterface(): AddonInterface {
     return {
       manifest: this.manifest,
       get: (resource, type, id, extra = {}, config = {}) => {

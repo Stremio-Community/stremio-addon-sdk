@@ -7,7 +7,7 @@ import type {
   ShortManifestResource,
 } from "@stremio-addon/standard-schema";
 
-export function getRouter({ manifest, get }: AddonInterface) {
+export function getRouter({ manifest, get }: AddonInterface): Router {
   const router = Router();
   router.use(cors());
 
@@ -124,4 +124,6 @@ export function getRouter({ manifest, get }: AddonInterface) {
         });
     },
   );
+
+  return router;
 }

@@ -2,7 +2,7 @@
   "name": "@stremio-addon/validation/zod",
   "version": "1.0.0",
   "description": "Community Stremio Addon SDK zod validation",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",

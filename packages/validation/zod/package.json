@@ -1,8 +1,16 @@
 {
-  "name": "@stremio-addon/validation/zod",
+  "name": "@stremio-addon/validation-zod",
   "version": "1.0.0",
   "description": "Community Stremio Addon SDK zod validation",
-  "main": "dist/index.js",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
@@ -18,7 +26,6 @@
   ],
   "author": "Sleeyax",
   "license": "MIT",
-  "type": "module",
   "devDependencies": {
     "typescript": "^5.9.2",
     "zod": "^4.1.11"

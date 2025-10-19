@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Community Stremio Addon SDK for modern-day TypeScript developers",
   "private": true,
+  "packageManager": "pnpm@10.18.3",
   "scripts": {
     "build": "pnpm -r build",
     "test": "echo \"Error: no test specified\" && exit 1",

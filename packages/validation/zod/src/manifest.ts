@@ -1,5 +1,5 @@
 import z from "zod";
-import type { ManifestSchema } from "@stremio-addon/standard-schema";
+import type { ManifestSchema as StandardManifestSchema } from "@stremio-addon/standard-schema";
 
 export const shortManifestResourceSchema = z.enum([
   "catalog",
@@ -8,10 +8,15 @@ export const shortManifestResourceSchema = z.enum([
   "subtitles",
   "addon_catalog",
 ]);
+export type ShortManifestResourceSchema = z.infer<
+  typeof shortManifestResourceSchema
+>;
 
 export const extraSchema = z.enum(["search", "genre", "skip"]);
+export type ExtraSchema = z.infer<typeof extraSchema>;
 
 export const contentTypeSchema = z.enum(["movie", "series", "channel", "tv"]);
+export type ContentTypeSchema = z.infer<typeof contentTypeSchema>;
 
 export const manifestConfigTypeSchema = z.enum([
   "text",
@@ -20,6 +25,7 @@ export const manifestConfigTypeSchema = z.enum([
   "checkbox",
   "select",
 ]);
+export type ManifestConfigTypeSchema = z.infer<typeof manifestConfigTypeSchema>;
 
 /**
  * A resolving object can also include the following cache related properties.
@@ -39,6 +45,7 @@ export const cacheSchema = z.object({
    */
   staleError: z.number().optional(),
 });
+export type CacheSchema = z.infer<typeof cacheSchema>;
 
 /**
  * Subtitles resource for the chosen media.
@@ -57,6 +64,7 @@ export const subtitleSchema = z.object({
    */
   lang: z.string(),
 });
+export type SubtitleSchema = z.infer<typeof subtitleSchema>;
 
 /**
  * Tells Stremio how to obtain the media content.
@@ -183,6 +191,7 @@ export const streamSchema = z.object({
     })
     .optional(),
 });
+export type StreamSchema = z.infer<typeof streamSchema>;
 
 export const metaLinkSchema = z.object({
   /**
@@ -201,6 +210,7 @@ export const metaLinkSchema = z.object({
    */
   url: z.string(),
 });
+export type MetaLinkSchema = z.infer<typeof metaLinkSchema>;
 
 export const metaVideoSchema = z.object({
   /**
@@ -262,6 +272,7 @@ export const metaVideoSchema = z.object({
    */
   overview: z.string().optional(),
 });
+export type MetaVideoSchema = z.infer<typeof metaVideoSchema>;
 
 /**
  * Summarized collection of meta items.
@@ -339,6 +350,7 @@ export const metaPreviewSchema = z.object({
     )
     .optional(),
 });
+export type MetaPreviewSchema = z.infer<typeof metaPreviewSchema>;
 
 /**
  * Detailed description of a meta item.
@@ -426,6 +438,7 @@ export const metaDetailSchema = metaPreviewSchema.extend({
     })
     .optional(),
 });
+export type MetaDetailSchema = z.infer<typeof metaDetailSchema>;
 
 /**
  * Addon setting.
@@ -456,6 +469,7 @@ export const manifestConfigSchema = z.object({
    */
   required: z.boolean().optional(),
 });
+export type ManifestConfigSchema = z.infer<typeof manifestConfigSchema>;
 
 export const manifestExtraSchema = z.object({
   /**
@@ -486,6 +500,7 @@ export const manifestExtraSchema = z.object({
    */
   optionsLimit: z.number().optional(),
 });
+export type ManifestExtraSchema = z.infer<typeof manifestExtraSchema>;
 
 export const manifestCatalogSchema = z.object({
   /**
@@ -512,6 +527,7 @@ export const manifestCatalogSchema = z.object({
    */
   extra: z.array(manifestExtraSchema).optional(),
 });
+export type ManifestCatalogSchema = z.infer<typeof manifestCatalogSchema>;
 
 export const fullManifestResourceSchema = z.object({
   /**
@@ -529,6 +545,9 @@ export const fullManifestResourceSchema = z.object({
    */
   idPrefixes: z.array(z.string()).optional(),
 });
+export type FullManifestResourceSchema = z.infer<
+  typeof fullManifestResourceSchema
+>;
 
 /**
  * Used as a response for defineResourceHandler.
@@ -547,6 +566,7 @@ export const addonCatalogSchema = z.object({
    */
   manifest: z.lazy(() => manifestSchema),
 });
+export type AddonCatalogSchema = z.infer<typeof addonCatalogSchema>;
 
 /**
  * The addon description and capabilities.
@@ -650,4 +670,6 @@ export const manifestSchema = z.object({
       configurationRequired: z.boolean().optional(),
     })
     .optional(),
-}) satisfies ManifestSchema;
+}) satisfies StandardManifestSchema;
+
+export type ManifestSchema = z.infer<typeof manifestSchema>;

@@ -2,6 +2,11 @@
 
 This is a simple "Hello World" addon example for Stremio, demonstrating how to create a basic addon using the Stremio Addon SDK. This addon is based on [Stremio/addon-helloworld](https://github.com/Stremio/addon-helloworld).
 
+This example uses the following packages from this repository:
+
+- `@stremio-addon/validation-zod` - For manifest validation using Zod
+- `@stremio-addon/runtime-node-express` - For running the addon server with Node.js and Express
+
 ## Getting Started
 
 ### Prerequisites

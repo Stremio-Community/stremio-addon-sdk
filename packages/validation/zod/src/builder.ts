@@ -1,4 +1,4 @@
-import { AddonBuilder as BaseAddonBuilder } from "@stremio-addon/standard-schema";
+import { AddonBuilder as BaseAddonBuilder } from "@stremio-addon/validation";
 import type z from "zod";
 import { manifestSchema } from "./manifest.js";
 

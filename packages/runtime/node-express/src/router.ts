@@ -6,7 +6,7 @@ import type {
   ContentType,
   DefaultConfig,
   ShortManifestResource,
-} from "@stremio-addon/standard-schema";
+} from "@stremio-addon/validation";
 
 export function getRouter({ manifest, get }: AddonInterface): Router {
   const router = Router();

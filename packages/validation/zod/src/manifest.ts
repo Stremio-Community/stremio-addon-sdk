@@ -1,5 +1,5 @@
 import z from "zod";
-import type { ManifestSchema as StandardManifestSchema } from "@stremio-addon/standard-schema";
+import type { ManifestSchema as StandardManifestSchema } from "@stremio-addon/validation";
 
 export const shortManifestResourceSchema = z.enum([
   "catalog",

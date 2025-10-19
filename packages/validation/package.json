@@ -1,5 +1,5 @@
 {
-  "name": "@stremio-addon/standard-schema",
+  "name": "@stremio-addon/validation",
   "version": "1.0.0",
   "description": "Community Stremio Addon SDK standard schema definitions",
   "type": "module",

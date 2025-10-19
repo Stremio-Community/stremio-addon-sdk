@@ -11,7 +11,6 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
@@ -30,7 +29,7 @@
     "express": "^5.1.0"
   },
   "dependencies": {
-    "@stremio-addon/standard-schema": "workspace:^",
+    "@stremio-addon/validation": "workspace:^",
     "cors": "^2.8.5"
   }
 }

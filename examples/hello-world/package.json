@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/server.js",
+  "private": true,
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js"

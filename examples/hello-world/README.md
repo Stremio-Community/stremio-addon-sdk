@@ -24,3 +24,5 @@ Build and start the addon:
 pnpm --filter hello-world run build
 pnpm --filter hello-world start
 ```
+
+Install the addon to Stremio: `http://localhost:3000/manifest.json`.

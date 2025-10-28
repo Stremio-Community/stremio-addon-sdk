@@ -37,6 +37,6 @@
     "zod": "^4.1.11"
   },
   "dependencies": {
-    "@stremio-addon/validation": "workspace:^"
+    "@stremio-addon/sdk": "workspace:^"
   }
 }

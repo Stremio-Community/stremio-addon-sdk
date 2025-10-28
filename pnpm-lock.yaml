@@ -69,6 +69,9 @@ importers:
       "@standard-schema/spec":
         specifier: ^1.0.0
         version: 1.0.0
+      path-to-regexp:
+        specifier: ^8.3.0
+        version: 8.3.0
     devDependencies:
       typescript:
         specifier: ^5.9.2

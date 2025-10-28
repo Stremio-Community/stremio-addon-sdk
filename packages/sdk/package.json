@@ -1,7 +1,7 @@
 {
   "name": "@stremio-addon/sdk",
   "version": "1.0.0",
-  "description": "Community Stremio Addon SDK standard schema definitions",
+  "description": "Community Stremio Addon SDK standard schema definitions and helper functions",
   "type": "module",
   "main": "./dist/index.js",
   "exports": {

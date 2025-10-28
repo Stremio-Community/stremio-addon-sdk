@@ -21,14 +21,16 @@ export function getRouter(addonInterface: AddonInterface): Router {
     const router = createRouter(addonInterface);
     const res = await router(req);
 
-    // Convert Response back to to Express Response.
-    expressResponse.status(res.status);
-    res.headers.forEach((value, key) => {
-      expressResponse.setHeader(key, value);
-    });
-    if (res.body) {
-      const body = await res.text();
-      expressResponse.send(body);
+    if (res) {
+      // Convert Response back to to Express Response.
+      expressResponse.status(res.status);
+      res.headers.forEach((value, key) => {
+        expressResponse.setHeader(key, value);
+      });
+      if (res.body) {
+        const body = await res.text();
+        expressResponse.send(body);
+      }
     }
 
     next();

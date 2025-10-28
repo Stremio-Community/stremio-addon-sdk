@@ -8,7 +8,7 @@ import type {
 import { match, type ParamData, type Path } from "path-to-regexp";
 
 export function createRouter({ get, manifest }: AddonInterface) {
-  return async function router(request: Request): Promise<Response> {
+  return async function router(request: Request): Promise<Response | null> {
     const { pathname } = new URL(request.url);
     const routePrefix = getRoutePrefix(manifest);
     const resourceHandlers = getResourceHandlers(manifest);
@@ -86,11 +86,8 @@ export function createRouter({ get, manifest }: AddonInterface) {
       }
     }
 
-    // No match.
-    return new Response(JSON.stringify({ err: "not found" }), {
-      status: 404,
-      headers,
-    });
+    // No match; the caller should handle this case.
+    return null;
   };
 }
 

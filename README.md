@@ -6,21 +6,16 @@ Community Stremio Addon SDK for modern-day TypeScript developers.
 
 ### Prerequisites
 
-- Node.js (latest LTS recommended)
-- Corepack enabled
+- Node.js LTS or higher
+- PNPM v10
 
 ### Installation
 
-1. Enable Corepack (if not already enabled):
+Install dependencies:
 
-   ```bash
-   corepack enable
-   ```
-
-2. Install dependencies:
-   ```bash
-   pnpm install
-   ```
+```bash
+pnpm install
+```
 
 ### Development
 
@@ -28,12 +23,6 @@ Build all packages:
 
 ```bash
 pnpm build
-```
-
-Format code:
-
-```bash
-pnpm format:fix
 ```
 
 ## License

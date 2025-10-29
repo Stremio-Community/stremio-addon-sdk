@@ -9,7 +9,7 @@ export function getRouter(addonInterface: AddonInterface): Router {
     // Convert an Express Request to a Request.
     const url = new URL(
       expressRequest.originalUrl,
-      `http://${expressRequest.headers.host}`,
+      `http://${expressRequest.headers.host || "localhost"}`,
     );
     const req = new globalThis.Request(url, {
       method: expressRequest.method,

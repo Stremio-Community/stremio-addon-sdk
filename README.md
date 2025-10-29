@@ -35,7 +35,9 @@ See [supported runtimes](./docs/runtimes.md).
 
 ## 📖 Usage
 
-See [examples](./examples/). If you know how to code an addon using the official SDK, you pretty much already know how to use this SDK. You can easily adapt to this SDK by following the [migration guide](./MIGRATION.md).
+See [examples](./examples/).
+
+If you know how to code an addon using the official SDK, you pretty much already know how to use this SDK. You can easily adapt to this SDK by following the [migration guide](./MIGRATION.md).
 
 ## 🆚 Comparison with Official SDK
 

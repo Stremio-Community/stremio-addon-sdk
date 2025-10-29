@@ -40,7 +40,9 @@ See [supported runtimes](./docs/runtimes.md).
 
 See [examples](./examples/).
 
-If you know how to code an addon using the official SDK, you pretty much already know how to use this SDK. You can migrate your existing code in ~ 2 minutes by following the [migration guide](./MIGRATION.md).
+If you're totally new to addon development, check out the [official Stremio Addon SDK documentation](https://github.com/Stremio/stremio-addon-sdk/tree/master/docs) and the [Stremio addon protocol documentation](https://github.com/Stremio/stremio-addon-sdk/blob/master/docs/protocol.md) to get familiar with Stremio addon development concepts.
+
+If you know how to code an addon using the official SDK already, you pretty much already know how to use this SDK. You can migrate your existing code in ~ 2 minutes by following the [migration guide](./MIGRATION.md).
 
 ## 🛠️ Development
 

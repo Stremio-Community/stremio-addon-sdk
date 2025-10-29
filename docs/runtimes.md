@@ -4,6 +4,8 @@ We provide runtime adapters for popular server frameworks and platforms.
 
 Since serverless platforms are very easily supported, we don't provide dedicated packages for them but include example adapter code snippets for your to copy paste into your code base instead. Server frameworks, on the other hand, often require more boilerplate and setup, so we provide dedicated packages for those.
 
+To implement your own custom runtime adapter, see the [custom](#custom) section below.
+
 ## Node.js
 
 ### Installation

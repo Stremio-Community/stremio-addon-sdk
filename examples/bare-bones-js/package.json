@@ -1,6 +1,6 @@
 {
   "name": "bare-bones-js",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A bare bones JavaScript Stremio addon using the Community Addon SDK",
   "main": "server.js",
   "private": true,

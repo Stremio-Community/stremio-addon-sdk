@@ -1,6 +1,6 @@
 {
   "name": "stremio-addon-sdk",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Community Stremio Addon SDK for modern-day TypeScript developers",
   "private": true,
   "packageManager": "pnpm@10.18.3",

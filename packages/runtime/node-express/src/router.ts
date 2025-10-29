@@ -2,9 +2,25 @@ import { Router } from "express";
 import cors from "cors";
 import { createRouter, type AddonInterface } from "@stremio-addon/sdk";
 
-export function getRouter(addonInterface: AddonInterface): Router {
+export type Options = {
+  cacheMaxAge?: number;
+};
+
+export function getRouter(
+  addonInterface: AddonInterface,
+  options: Options = {},
+): Router {
   const expressRouter = Router();
   expressRouter.use(cors());
+  expressRouter.use((_, res, next) => {
+    const cacheMaxAge = options.cacheMaxAge;
+
+    if (cacheMaxAge && !res.getHeader("Cache-Control")) {
+      res.setHeader("Cache-Control", `max-age=${cacheMaxAge}, public`);
+    }
+
+    next();
+  });
   expressRouter.use(async (expressRequest, expressResponse, next) => {
     // Convert an Express Request to a Request.
     const url = new URL(

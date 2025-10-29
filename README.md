@@ -17,7 +17,7 @@ Get started quickly by installing the core SDK, zod for validation and express a
 
 ```bash
 pnpm add @stremio-addon/sdk @stremio-addon/validation-zod @stremio-addon/runtime-node-express
-pnpm add express
+pnpm add express zod
 pnpm add -D typescript @types/express
 ```
 

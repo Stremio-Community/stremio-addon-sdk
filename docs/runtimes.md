@@ -12,10 +12,6 @@ Since serverless platforms are very easily supported, we don't provide dedicated
 pnpm add @stremio-addon/runtime-node
 ```
 
-### Adapter Code
-
-See the [node](../packages/runtime/node/src/router.ts) package for the complete Node.js adapter implementation.
-
 ### Usage
 
 See [examples/bare-bones-js](../examples/bare-bones-js/).
@@ -29,10 +25,6 @@ pnpm add @stremio-addon/runtime-node-express express
 # (Optional) if using TypeScript:
 pnpm add -D @types/express
 ```
-
-### Adapter Code
-
-See the [node-express](../packages/runtime/node-express/src/router.ts) package for the complete Express adapter implementation.
 
 ### Usage
 

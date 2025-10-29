@@ -16,7 +16,8 @@ A modern SDK for building [Stremio](https://www.stremio.com/) addons with TypeSc
 Get started quickly by installing the core SDK, zod for validation and express as your runtime:
 
 ```bash
-pnpm add @stremio-addon/sdk @stremio-addon/validation-zod @stremio-addon/runtime-node-express express
+pnpm add @stremio-addon/sdk @stremio-addon/validation-zod @stremio-addon/runtime-node-express
+pnpm add express
 pnpm add -D typescript @types/express
 ```
 

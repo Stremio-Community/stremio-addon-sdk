@@ -9,7 +9,7 @@ Since serverless platforms are very easily supported, we don't provide dedicated
 ### Installation
 
 ```bash
-pnpm add @stremio-addon/sdk @stremio-addon/runtime-node
+pnpm add @stremio-addon/runtime-node
 ```
 
 ### Adapter Code
@@ -25,7 +25,7 @@ See [examples/bare-bones-js](../examples/bare-bones-js/).
 ### Installation
 
 ```bash
-pnpm add @stremio-addon/sdk @stremio-addon/runtime-node-express express
+pnpm add @stremio-addon/runtime-node-express express
 # (Optional) if using TypeScript:
 pnpm add -D @types/express
 ```
@@ -43,7 +43,7 @@ See [examples/hello-world](../examples/hello-world/).
 ### Installation
 
 ```bash
-pnpm add @stremio-addon/sdk hono hono/cors
+pnpm add hono hono/cors
 ```
 
 ### Adapter Code
@@ -73,7 +73,7 @@ export function getRouter(addonInterface: AddonInterface) {
 ### Installation
 
 ```bash
-pnpm add @stremio-addon/sdk wrangler
+pnpm add wrangler
 ```
 
 ### Adapter Code

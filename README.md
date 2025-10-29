@@ -13,15 +13,14 @@ A modern SDK for building [Stremio](https://www.stremio.com/) addons with TypeSc
 
 ## 🆚 Comparison with Official SDK
 
-| Feature                | Community SDK                             | Official SDK                  |
-| ---------------------- | ----------------------------------------- | ----------------------------- |
-| **TypeScript Support** | ✅ Full native support                    | ⚠️ Type definitions available |
-| **Runtime Validation** | ✅ Supports validation libraries like zod | ❌ Manual validation          |
-| **Type Safety**        | ✅ End-to-end type safety                 | ⚠️ Partial                    |
-| **Modern Syntax**      | ✅ ESM                                    | ⚠️ CommonJS                   |
-| **Architecture**       | ✅ Composable packages                    | ❌ Monolithic                 |
-| **Framework Support**  | 🔄 Server, serverless, or bring your own  | ⚠️ Express built-in           |
-| **Bundle Size**        | ✨ Smaller with tree-shaking              | ⚠️ Larger                     |
+| Feature                | Community SDK                            | Official SDK                  |
+| ---------------------- | ---------------------------------------- | ----------------------------- |
+| **TypeScript Support** | ✅ Full native support                   | ⚠️ Type definitions available |
+| **Runtime Validation** | ✅ Validation libraries (zod)            | ❌ Not supported              |
+| **Type Safety**        | ✅ End-to-end type safety                | ⚠️ Partial                    |
+| **Modern Syntax**      | ✅ ESM                                   | ⚠️ CommonJS                   |
+| **Architecture**       | ✅ Composable packages                   | ❌ Monolithic                 |
+| **Framework Support**  | ✅ Server, serverless, or bring your own | ⚠️ Express built-in           |
 
 **When to use the Community SDK:**
 

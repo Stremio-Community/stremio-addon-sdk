@@ -11,6 +11,32 @@ A modern SDK for building [Stremio](https://www.stremio.com/) addons with TypeSc
 - 📦 **Multiple runtimes** - Supports Node.js, Node.js + Express, hono, vercel, cloudflare workers etc. (or bring your own runtime)
 - 🔧 **Easy migration** - The API is similar to the official SDK making it easy to switch
 
+## 🆚 Comparison with Official SDK
+
+| Feature                  | Community SDK                                         | Official SDK                  |
+| ------------------------ | ----------------------------------------------------- | ----------------------------- |
+| **TypeScript Support**   | ✅ Full native support                                | ⚠️ Type definitions available |
+| **Runtime Validation**   | ✅ Zod schemas                                        | ❌ Manual validation          |
+| **Type Safety**          | ✅ End-to-end type safety                             | ⚠️ Partial                    |
+| **Modern Syntax**        | ✅ ESM, latest TypeScript                             | ⚠️ CommonJS                   |
+| **Modular Architecture** | ✅ Composable packages                                | ❌ Monolithic                 |
+| **Framework Support**    | 🔄 Extensible (server, serverless, or bring your own) | ⚠️ Express built-in           |
+| **Bundle Size**          | ✨ Smaller with tree-shaking                          | ⚠️ Larger                     |
+| **Active Development**   | ✅ Community-driven                                   | ✅ Official support           |
+
+**When to use the Community SDK:**
+
+- You're building with TypeScript
+- You want strong type safety and IDE support
+- You prefer modern JavaScript/TypeScript patterns
+- You need runtime validation
+
+**When to use the Official SDK:**
+
+- You need proven stability with official support
+- You're working with JavaScript
+- You want the most battle-tested solution
+
 ## 📦 Installation
 
 ## 1. Install the SDK package
@@ -38,32 +64,6 @@ See [supported runtimes](./docs/runtimes.md).
 See [examples](./examples/).
 
 If you know how to code an addon using the official SDK, you pretty much already know how to use this SDK. You can migrate your existing code in ~ 2 minutes by following the [migration guide](./MIGRATION.md).
-
-## 🆚 Comparison with Official SDK
-
-| Feature                  | Community SDK                                         | Official SDK                  |
-| ------------------------ | ----------------------------------------------------- | ----------------------------- |
-| **TypeScript Support**   | ✅ Full native support                                | ⚠️ Type definitions available |
-| **Runtime Validation**   | ✅ Zod schemas                                        | ❌ Manual validation          |
-| **Type Safety**          | ✅ End-to-end type safety                             | ⚠️ Partial                    |
-| **Modern Syntax**        | ✅ ESM, latest TypeScript                             | ⚠️ CommonJS                   |
-| **Modular Architecture** | ✅ Composable packages                                | ❌ Monolithic                 |
-| **Framework Support**    | 🔄 Extensible (server, serverless, or bring your own) | ⚠️ Express built-in           |
-| **Bundle Size**          | ✨ Smaller with tree-shaking                          | ⚠️ Larger                     |
-| **Active Development**   | ✅ Community-driven                                   | ✅ Official support           |
-
-**When to use the Community SDK:**
-
-- You're building with TypeScript
-- You want strong type safety and IDE support
-- You prefer modern JavaScript/TypeScript patterns
-- You need runtime validation
-
-**When to use the Official SDK:**
-
-- You need proven stability with official support
-- You're working with JavaScript
-- You want the most battle-tested solution
 
 ## 🛠️ Development
 

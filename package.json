@@ -12,7 +12,6 @@
     "format:fix": "prettier . --write",
     "prepare": "husky"
   },
-  "author": "Sleeyax",
   "license": "MIT",
   "lint-staged": {
     "*": [

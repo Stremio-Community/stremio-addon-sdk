@@ -20,7 +20,6 @@
     "build:watch": "tsc --watch"
   },
   "keywords": [],
-  "author": "Sleeyax",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^24.9.2",

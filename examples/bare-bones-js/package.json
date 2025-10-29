@@ -8,7 +8,6 @@
     "start": "node src/server.js"
   },
   "keywords": [],
-  "author": "Sleeyax",
   "license": "MIT",
   "type": "module",
   "dependencies": {

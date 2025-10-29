@@ -27,7 +27,6 @@
     "typescript",
     "zod"
   ],
-  "author": "Sleeyax",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.9.2",

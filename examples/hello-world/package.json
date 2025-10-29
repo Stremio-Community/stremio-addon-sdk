@@ -9,7 +9,6 @@
     "start": "node dist/server.js"
   },
   "keywords": [],
-  "author": "Sleeyax",
   "license": "MIT",
   "type": "module",
   "dependencies": {

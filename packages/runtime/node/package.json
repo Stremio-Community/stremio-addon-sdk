@@ -1,0 +1,32 @@
+{
+  "name": "@stremio-addon/runtime-node",
+  "version": "1.0.0",
+  "description": "Node runtime for the Community Stremio Addon SDK",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
+  "keywords": [],
+  "author": "Sleeyax",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@stremio-addon/sdk": "workspace:^"
+  }
+}

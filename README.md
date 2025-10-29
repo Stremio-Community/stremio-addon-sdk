@@ -37,7 +37,7 @@ See [supported runtimes](./docs/runtimes.md).
 
 See [examples](./examples/).
 
-If you know how to code an addon using the official SDK, you pretty much already know how to use this SDK. You can easily adapt to this SDK by following the [migration guide](./MIGRATION.md).
+If you know how to code an addon using the official SDK, you pretty much already know how to use this SDK. You can migrate your existing code in ~ 2 minutes by following the [migration guide](./MIGRATION.md).
 
 ## 🆚 Comparison with Official SDK
 

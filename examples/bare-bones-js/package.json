@@ -1,0 +1,18 @@
+{
+  "name": "bare-bones-js",
+  "version": "1.0.0",
+  "description": "A bare bones JavaScript Stremio addon using the Community Addon SDK",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "Sleeyax",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@stremio-addon/runtime-node": "workspace:*",
+    "@stremio-addon/sdk": "workspace:*"
+  }
+}

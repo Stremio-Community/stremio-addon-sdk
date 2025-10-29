@@ -1,0 +1,36 @@
+{
+  "name": "@stremio-addon/compat",
+  "version": "0.0.1",
+  "description": "Drop-in compatibility package to adopt addons built with the official Stremio Addon SDK",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "express": "^5.1.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@stremio-addon/runtime-node-express": "workspace:*",
+    "@stremio-addon/sdk": "workspace:*",
+    "open": "^10.2.0"
+  },
+  "peerDependencies": {
+    "express": "^5.1.0"
+  }
+}

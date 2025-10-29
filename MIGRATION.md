@@ -2,6 +2,58 @@
 
 This guide will help you migrate from the official `stremio-addon-sdk` to the Community Stremio Addon SDK.
 
+## ⚡ Quick Migration (Drop-in Replacement!)
+
+**Want to migrate in seconds?** Use the `@stremio-addon/compat` package for a drop-in replacement that requires minimal code changes. You can then incrementally adopt new features from the community SDK as your addon grows.
+
+### 1. Install the compatibility package
+
+```bash
+npm uninstall stremio-addon-sdk
+npm install @stremio-addon/compat
+```
+
+### 2. Update your imports
+
+Just change your import statement:
+
+```javascript
+// Before
+const { addonBuilder, serveHTTP } = require("stremio-addon-sdk");
+
+// After
+import { addonBuilder, serveHTTP } from "@stremio-addon/compat";
+```
+
+**That's all!** Your addon will work exactly as before. The rest of your code stays the same:
+
+```javascript
+import { addonBuilder, serveHTTP } from "@stremio-addon/compat";
+
+const builder = new addonBuilder(manifest);
+
+builder.defineStreamHandler(function (args) {
+  // Your existing handler code.
+  return Promise.resolve({ streams: [] });
+});
+
+serveHTTP(builder.getInterface(), { port: 7000 });
+```
+
+The compat package is built on top of the new modular SDK, so you can gradually adopt new features:
+
+1. **Add validation** - Switch to `@stremio-addon/validation-zod` for runtime type checking
+2. **Customize your runtime** - Use `@stremio-addon/runtime-node-express` or other runtimes directly
+3. **Add middleware** - Take full control of your Express app with custom routes and middleware
+
+See the [Full Migration Guide](#-full-migration-guide) below for details on adopting these features.
+
+---
+
+## 📖 Full Migration Guide
+
+This section covers migrating to the full SDK with all features and customization options.
+
 ## 📥 Import Changes
 
 The main difference is in how you import the SDK modules.

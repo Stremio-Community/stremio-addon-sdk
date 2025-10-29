@@ -62,15 +62,12 @@ The main difference is in how you import the SDK modules.
 
 ```javascript
 const { addonBuilder } = require("stremio-addon-sdk");
-// or
-import { addonBuilder } from "stremio-addon-sdk";
 ```
 
 ### Community SDK
 
 ```typescript
 import { AddonBuilder } from "@stremio-addon/validation-zod";
-import { getRouter } from "@stremio-addon/runtime-node-express";
 ```
 
 ## 🖥️ Runtime Setup

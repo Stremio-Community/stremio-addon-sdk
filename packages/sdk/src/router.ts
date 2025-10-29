@@ -9,7 +9,7 @@ import { match, type ParamData, type Path } from "path-to-regexp";
 
 export function createRouter({ get, manifest }: AddonInterface) {
   return async function router(request: Request): Promise<Response | null> {
-    const { pathname } = new URL(request.url);
+    const { pathname } = getUrl(request);
     const routePrefix = getRoutePrefix(manifest);
     const resourceHandlers = getResourceHandlers(manifest);
     const headers = { "Content-Type": "application/json; charset=utf-8" };
@@ -89,6 +89,16 @@ export function createRouter({ get, manifest }: AddonInterface) {
     // No match; the caller should handle this case.
     return null;
   };
+}
+
+function getUrl(req: Request) {
+  if (req.url.includes("://")) {
+    return new URL(req.url);
+  }
+
+  const host = req.headers.get("host");
+
+  return new URL(`http://${host || "localhost"}${req.url}`);
 }
 
 function getRoutePrefix(manifest: Manifest) {

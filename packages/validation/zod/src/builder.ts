@@ -4,6 +4,6 @@ import { manifestSchema } from "./manifest.js";
 
 export class AddonBuilder extends BaseAddonBuilder {
   constructor(manifest: z.infer<typeof manifestSchema>) {
-    super(manifestSchema, manifest);
+    super(manifest, manifestSchema);
   }
 }

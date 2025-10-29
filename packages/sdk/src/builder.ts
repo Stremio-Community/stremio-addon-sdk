@@ -23,11 +23,15 @@ export class AddonBuilder {
   private readonly handlers = new Map<ShortManifestResource, Handler>();
   private readonly manifest: Manifest;
 
-  constructor(schema: ManifestSchema, data: Manifest) {
-    try {
-      this.manifest = validate(schema, data);
-    } catch (err) {
-      throw new Error(`Invalid manifest: ${err}`);
+  constructor(data: Manifest, schema?: ManifestSchema) {
+    if (schema) {
+      try {
+        this.manifest = validate(schema, data);
+      } catch (err) {
+        throw new Error(`Invalid manifest: ${err}`);
+      }
+    } else {
+      this.manifest = data;
     }
   }
 

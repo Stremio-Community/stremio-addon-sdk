@@ -13,9 +13,6 @@ A modern SDK for building [Stremio](https://www.stremio.com/) addons with TypeSc
 
 ## 🚀 Quick Start
 
-> [!NOTE]  
-> The instructions below assume you are using `pnpm` as your package manager, but `npm` or `yarn` are supported too. Simply replace `pnpm add` with `npm install` or `yarn add` as needed.
-
 Get started quickly by installing the core SDK, zod for validation and express as your runtime:
 
 ```bash

@@ -11,30 +11,6 @@ A modern SDK for building [Stremio](https://www.stremio.com/) addons with TypeSc
 - 📦 **Multiple runtimes** - Supports Node.js, Node.js + Express, hono, vercel, cloudflare workers etc. (or bring your own runtime)
 - 🔧 **Easy migration** - The API is similar to the official SDK making it easy to switch
 
-## 🆚 Comparison with Official SDK
-
-| Feature                | Community SDK                            | Official SDK                  |
-| ---------------------- | ---------------------------------------- | ----------------------------- |
-| **TypeScript Support** | ✅ Full native support                   | ⚠️ Type definitions available |
-| **Runtime Validation** | ✅ Validation libraries (zod)            | ❌ Not supported              |
-| **Type Safety**        | ✅ End-to-end type safety                | ⚠️ Partial                    |
-| **Modern Syntax**      | ✅ ESM                                   | ⚠️ CommonJS                   |
-| **Architecture**       | ✅ Composable packages                   | ❌ Monolithic                 |
-| **Framework Support**  | ✅ Server, serverless, or bring your own | ⚠️ Express built-in           |
-
-**When to use the Community SDK:**
-
-- You're building with TypeScript
-- You want strong type safety and IDE support
-- You prefer modern JavaScript/TypeScript patterns
-- You need runtime validation
-
-**When to use the Official SDK:**
-
-- You need proven stability with official support
-- You're working with JavaScript
-- You want the most battle-tested solution
-
 ## 📦 Installation
 
 ## 1. Install the SDK package

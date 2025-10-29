@@ -213,7 +213,8 @@ Let's migrate a complete addon:
 npm uninstall stremio-addon-sdk @types/stremio-addon-sdk
 
 # Install new SDK with zod validation and express runtime
-npm install @stremio-addon/sdk @stremio-addon/validation-zod @stremio-addon/runtime-node-express express
+npm install @stremio-addon/sdk @stremio-addon/validation-zod @stremio-addon/runtime-node-express
+npm install express zod
 npm install -D @types/express typescript
 ```
 

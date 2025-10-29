@@ -11,19 +11,6 @@ A modern SDK for building [Stremio](https://www.stremio.com/) addons with TypeSc
 - 📦 **Multiple runtimes** - Supports Node.js, Node.js + Express, hono, vercel, cloudflare workers etc. (or bring your own runtime)
 - 🔧 **Easy migration** - The API is similar to the official SDK making it easy to switch
 
-## 🚀 Quick Start
-
-Get started quickly by installing the core SDK, zod for validation and express as your runtime:
-
-```bash
-pnpm add @stremio-addon/sdk @stremio-addon/validation-zod @stremio-addon/runtime-node-express
-pnpm add express zod
-# (Optional) if using TypeScript:
-pnpm add -D typescript @types/express
-```
-
-Then see [examples/hello-world](./examples/hello-world/) for a simple code example.
-
 ## 📦 Installation
 
 ## 1. Install the SDK package
@@ -39,7 +26,7 @@ This step is optional but highly recommended to ensure your addon adheres to the
 ### zod
 
 ```bash
-pnpm add @stremio-addon/validation-zod
+pnpm add @stremio-addon/validation-zod zod
 ```
 
 ## 3. Integrate with your preferred runtime (server, serverless, or custom)

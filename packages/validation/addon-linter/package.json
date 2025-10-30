@@ -1,0 +1,41 @@
+{
+  "name": "@stremio-addon/validation-addon-linter",
+  "version": "0.0.1",
+  "description": "Community Stremio Addon SDK validation using stremio-addon-linter",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
+  "keywords": [
+    "stremio",
+    "stremio addon sdk",
+    "stremio addons",
+    "stremio addon",
+    "typescript",
+    "stremio-addon-linter"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "stremio-addon-linter": "^1.7.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@stremio-addon/sdk": "workspace:^"
+  },
+  "peerDependencies": {
+    "stremio-addon-linter": "^1.7.0"
+  }
+}

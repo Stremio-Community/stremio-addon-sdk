@@ -26,10 +26,16 @@ pnpm add @stremio-addon/sdk
 
 This step is optional but highly recommended to ensure your addon adheres to the expected schemas.
 
-### zod
+### [zod](https://github.com/colinhacks/zod)
 
 ```bash
 pnpm add @stremio-addon/validation-zod zod
+```
+
+### [stremio-addon-linter](https://github.com/Stremio/stremio-addon-linter)
+
+```bash
+pnpm add @stremio-addon/validation-addon-linter stremio-addon-linter
 ```
 
 ## 3. Integrate with your preferred runtime (server, serverless, or custom)

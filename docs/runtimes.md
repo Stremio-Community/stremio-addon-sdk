@@ -34,6 +34,9 @@ See [examples/hello-world](../examples/hello-world/).
 
 ## Hono
 
+> [!WARNING]  
+> This section is a work in progress. Contributions and documentation improvements are welcome!
+
 ### Installation
 
 ```bash
@@ -63,6 +66,9 @@ export function getRouter(addonInterface: AddonInterface) {
 ```
 
 ## Cloudflare Workers
+
+> [!WARNING]  
+> This section is a work in progress. Contributions and documentation improvements are welcome!
 
 ### Installation
 

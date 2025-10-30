@@ -1,6 +1,6 @@
 {
   "name": "@stremio-addon/compat",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Drop-in compatibility package to adopt addons built with the official Stremio Addon SDK",
   "type": "module",
   "main": "./dist/index.js",

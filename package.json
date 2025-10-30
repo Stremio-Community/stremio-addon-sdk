@@ -15,6 +15,10 @@
     "prepare": "husky"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stremio-Community/stremio-addon-sdk.git"
+  },
   "lint-staged": {
     "*": [
       "prettier --write --ignore-unknown"

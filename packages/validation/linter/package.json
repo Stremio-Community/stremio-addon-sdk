@@ -28,6 +28,11 @@
     "stremio-addon-linter"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stremio-Community/stremio-addon-sdk.git",
+    "directory": "packages/validation/linter"
+  },
   "devDependencies": {
     "stremio-addon-linter": "^1.7.0",
     "typescript": "^5.9.2"

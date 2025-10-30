@@ -22,6 +22,11 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stremio-Community/stremio-addon-sdk.git",
+    "directory": "packages/runtime/node-express"
+  },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",

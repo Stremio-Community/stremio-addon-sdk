@@ -21,6 +21,11 @@
     "build:watch": "tsc --watch"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stremio-Community/stremio-addon-sdk.git",
+    "directory": "packages/compat"
+  },
   "devDependencies": {
     "@types/express": "^5.0.5",
     "@types/supertest": "^6.0.3",

@@ -21,6 +21,11 @@
   },
   "keywords": [],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stremio-Community/stremio-addon-sdk.git",
+    "directory": "packages/runtime/node"
+  },
   "devDependencies": {
     "@types/node": "^24.9.2",
     "typescript": "^5.9.2"

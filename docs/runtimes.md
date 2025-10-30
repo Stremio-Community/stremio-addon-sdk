@@ -11,7 +11,7 @@ To implement your own custom runtime adapter, see the [custom](#custom) section 
 ### Installation
 
 ```bash
-pnpm add @stremio-addon/runtime-node
+pnpm add @stremio-addon/node
 ```
 
 ### Usage
@@ -23,7 +23,7 @@ See [examples/bare-bones-js](../examples/bare-bones-js/).
 ### Installation
 
 ```bash
-pnpm add @stremio-addon/runtime-node-express express
+pnpm add @stremio-addon/node-express express
 # (Optional) if using TypeScript:
 pnpm add -D @types/express
 ```

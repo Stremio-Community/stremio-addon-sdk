@@ -1,5 +1,5 @@
 import { AddonBuilder } from "@stremio-addon/sdk";
-import { getRouter } from "@stremio-addon/runtime-node";
+import { getRouter } from "@stremio-addon/node";
 
 const builder = new AddonBuilder({
   id: "org.myexampleaddon",

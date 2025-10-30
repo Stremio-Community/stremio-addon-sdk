@@ -1,4 +1,4 @@
-import { getRouter } from "@stremio-addon/runtime-node-express";
+import { getRouter } from "@stremio-addon/node-express";
 import type { AddonInterface } from "@stremio-addon/sdk";
 import express from "express";
 import open from "open";

@@ -29,7 +29,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "@stremio-addon/runtime-node-express": "workspace:*",
+    "@stremio-addon/node-express": "workspace:*",
     "@stremio-addon/sdk": "workspace:*",
     "@stremio-addon/validation-addon-linter": "workspace:*",
     "express": "^5.1.0",

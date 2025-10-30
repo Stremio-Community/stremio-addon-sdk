@@ -22,7 +22,7 @@ importers:
 
   examples/bare-bones-js:
     dependencies:
-      "@stremio-addon/runtime-node":
+      "@stremio-addon/node":
         specifier: workspace:*
         version: link:../../packages/runtime/node
       "@stremio-addon/sdk":
@@ -31,7 +31,7 @@ importers:
 
   examples/hello-world:
     dependencies:
-      "@stremio-addon/runtime-node-express":
+      "@stremio-addon/node-express":
         specifier: workspace:^
         version: link:../../packages/runtime/node-express
       "@stremio-addon/validation-zod":
@@ -56,7 +56,7 @@ importers:
 
   packages/compat:
     dependencies:
-      "@stremio-addon/runtime-node-express":
+      "@stremio-addon/node-express":
         specifier: workspace:*
         version: link:../runtime/node-express
       "@stremio-addon/sdk":

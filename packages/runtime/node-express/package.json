@@ -1,5 +1,5 @@
 {
-  "name": "@stremio-addon/runtime-node-express",
+  "name": "@stremio-addon/node-express",
   "version": "0.0.1",
   "description": "Node runtime with Express.js for the Community Stremio Addon SDK",
   "type": "module",

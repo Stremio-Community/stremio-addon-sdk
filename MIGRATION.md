@@ -43,7 +43,7 @@ serveHTTP(builder.getInterface(), { port: 7000 });
 The compat package is built on top of the new modular SDK, so you can gradually adopt new features:
 
 1. **Add validation** - Switch to `@stremio-addon/validation-zod` for runtime type checking
-2. **Customize your runtime** - Use `@stremio-addon/runtime-node-express` or other runtimes directly
+2. **Customize your runtime** - Use `@stremio-addon/node-express` or other runtimes directly
 3. **Add middleware** - Take full control of your Express app with custom routes and middleware
 
 See the [Full Migration Guide](#-full-migration-guide) below for details on adopting these features.
@@ -90,7 +90,7 @@ serveHTTP(builder.getInterface(), { port: 7000 });
 ```typescript
 import express from "express";
 import { AddonBuilder } from "@stremio-addon/validation-zod";
-import { getRouter } from "@stremio-addon/runtime-node-express";
+import { getRouter } from "@stremio-addon/node-express";
 
 const builder = new AddonBuilder(manifest);
 // ... define handlers
@@ -203,7 +203,7 @@ import {
   AddonBuilder,
   type ManifestSchema,
 } from "@stremio-addon/validation-zod";
-import { getRouter } from "@stremio-addon/runtime-node-express";
+import { getRouter } from "@stremio-addon/node-express";
 
 const manifest: ManifestSchema = {
   id: "com.example.addon",
@@ -262,7 +262,7 @@ Let's migrate a complete addon:
 npm uninstall stremio-addon-sdk @types/stremio-addon-sdk
 
 # Install new SDK with zod validation and express runtime
-npm install @stremio-addon/sdk @stremio-addon/validation-zod @stremio-addon/runtime-node-express
+npm install @stremio-addon/sdk @stremio-addon/validation-zod @stremio-addon/node-express
 npm install express zod
 npm install -D @types/express typescript
 ```

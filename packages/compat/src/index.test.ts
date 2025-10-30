@@ -2,7 +2,7 @@ import { describe, it, expect, beforeAll, afterAll } from "vitest";
 import request from "supertest";
 import type { Server } from "http";
 import { AddonBuilder } from "@stremio-addon/validation-addon-linter";
-import { getRouter } from "@stremio-addon/runtime-node-express";
+import { getRouter } from "@stremio-addon/node-express";
 import { serveHTTP } from "./serve-http.js";
 import { publishToCentral } from "./publish-to-central.js";
 import type { Manifest } from "@stremio-addon/sdk";

@@ -12,7 +12,7 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "@stremio-addon/runtime-node-express": "workspace:^",
+    "@stremio-addon/node-express": "workspace:^",
     "@stremio-addon/validation-zod": "workspace:^",
     "express": "^5.1.0",
     "magnet-uri": "^7.0.7"

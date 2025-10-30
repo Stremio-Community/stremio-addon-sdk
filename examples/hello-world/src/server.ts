@@ -1,4 +1,4 @@
-import { getRouter } from "@stremio-addon/runtime-node-express";
+import { getRouter } from "@stremio-addon/node-express";
 import { addonInterface } from "./addon.js";
 import express from "express";
 

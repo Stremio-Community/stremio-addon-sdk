@@ -6,7 +6,7 @@
 This minimal addon example is based on [Stremio/stremio-addon-sdk/examples/from-readme.js](https://github.com/Stremio/stremio-addon-sdk/blob/8ee6e43fde9eab9452791f96f03f7cdfda8512eb/examples/from-readme.js) and uses only the following packages:
 
 - `@stremio-addon/sdk` - Core SDK functionalities
-- `@stremio-addon/runtime-node`- For running the addon server with Node.js
+- `@stremio-addon/node`- For running the addon server with Node.js
 
 ## Usage
 

@@ -1,7 +1,7 @@
 {
   "name": "@stremio-addon/zod",
   "version": "0.0.1",
-  "description": "Community Stremio Addon SDK zod validation",
+  "description": "Community Stremio Addon SDK validation using zod",
   "type": "module",
   "main": "./dist/index.js",
   "exports": {

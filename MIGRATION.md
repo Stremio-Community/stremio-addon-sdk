@@ -9,7 +9,7 @@ This guide will help you migrate from the official `stremio-addon-sdk` to the Co
 ### 1. Install the compatibility package
 
 ```bash
-npm uninstall stremio-addon-sdk
+npm uninstall stremio-addon-sdk @types/stremio-addon-sdk
 npm install @stremio-addon/compat
 ```
 

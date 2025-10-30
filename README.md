@@ -2,9 +2,6 @@
 
 A modern SDK for building [Stremio](https://www.stremio.com/) addons with TypeScript (or JavaScript).
 
-> [!NOTE]  
-> This project is in active development. Version `0.x.y` is usable but may introduce breaking changes between minor releases. The upcoming version `1.x.y` will mark the first stable release with semantic versioning guarantees.
-
 ## ✨ Features
 
 - 🎯 **Type-safe** - Full TypeScript support with comprehensive type definitions
@@ -15,6 +12,9 @@ A modern SDK for building [Stremio](https://www.stremio.com/) addons with TypeSc
 - 🔧 **Easy migration** - The API is similar to the official SDK making it easy to switch
 
 ## 📦 Installation
+
+> [!NOTE]  
+> This project is in active development. Version `0.x.y` is usable but may introduce breaking changes between minor releases. The upcoming version `1.x.y` will mark the first stable release with semantic versioning guarantees.
 
 ## 1. Install the SDK package
 

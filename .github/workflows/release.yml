@@ -36,9 +36,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build packages
-        run: pnpm build
-
       - name: Create release PR or publish to NPM package registry
         id: changesets
         uses: changesets/action@v1

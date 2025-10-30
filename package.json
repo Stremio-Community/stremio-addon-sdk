@@ -16,6 +16,7 @@
     "prepare": "husky",
     "changeset": "changeset",
     "changeset:status": "changeset status --verbose",
+    "preci:publish": "pnpm build",
     "ci:publish": "pnpm publish --recursive --access public"
   },
   "license": "MIT",

@@ -13,7 +13,10 @@
     "test:watch": "vitest",
     "format": "prettier . --check",
     "format:fix": "prettier . --write",
-    "prepare": "husky"
+    "prepare": "husky",
+    "changeset": "changeset",
+    "changeset:status": "changeset status --verbose",
+    "ci:publish": "pnpm publish --recursive --access public"
   },
   "license": "MIT",
   "repository": {
@@ -26,6 +29,7 @@
     ]
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.7",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.1",
     "prettier": "^3.6.2",

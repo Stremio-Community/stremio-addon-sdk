@@ -208,6 +208,14 @@ Releases are managed by maintainers. The process includes:
 3. Create a release tag
 4. Publish to npm registry
 
+### Using Changesets
+
+This project uses [Changesets](https://github.com/changesets/changesets) for version management and automated releases. When contributing:
+
+1. Create a changeset: `pnpm changeset`
+2. Fill out the prompted information about your changes and commit the changeset file.
+3. The changeset will be included in the next release. You can check the status of your changesets with `pnpm changeset:status`.
+
 ### Semantic Versioning
 
 - **Major** (1.0.0): Breaking changes

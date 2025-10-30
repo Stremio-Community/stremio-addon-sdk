@@ -1,9 +1,6 @@
 import { exampleStreams } from "./data.js";
 import { manifest } from "./manifest.js";
-import {
-  AddonBuilder,
-  type MetaPreviewSchema,
-} from "@stremio-addon/validation-zod";
+import { AddonBuilder, type MetaPreviewSchema } from "@stremio-addon/zod";
 
 const builder = new AddonBuilder(manifest);
 

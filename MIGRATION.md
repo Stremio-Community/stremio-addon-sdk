@@ -42,7 +42,7 @@ serveHTTP(builder.getInterface(), { port: 7000 });
 
 The compat package is built on top of the new modular SDK, so you can gradually adopt new features:
 
-1. **Add validation** - Switch to `@stremio-addon/validation-zod` for runtime type checking
+1. **Add validation** - Switch to `@stremio-addon/zod` for runtime type checking
 2. **Customize your runtime** - Use `@stremio-addon/node-express` or other runtimes directly
 3. **Add middleware** - Take full control of your Express app with custom routes and middleware
 
@@ -67,7 +67,7 @@ const { addonBuilder } = require("stremio-addon-sdk");
 ### Community SDK
 
 ```typescript
-import { AddonBuilder } from "@stremio-addon/validation-zod";
+import { AddonBuilder } from "@stremio-addon/zod";
 ```
 
 ## 🖥️ Runtime Setup
@@ -89,7 +89,7 @@ serveHTTP(builder.getInterface(), { port: 7000 });
 
 ```typescript
 import express from "express";
-import { AddonBuilder } from "@stremio-addon/validation-zod";
+import { AddonBuilder } from "@stremio-addon/zod";
 import { getRouter } from "@stremio-addon/node-express";
 
 const builder = new AddonBuilder(manifest);
@@ -116,7 +116,7 @@ app.listen(port, () => {
 The Community SDK provides full type safety for handler arguments and return values:
 
 ```typescript
-import { type StreamHandler } from "@stremio-addon/validation-zod";
+import { type StreamHandler } from "@stremio-addon/zod";
 
 // Fully typed handler
 const streamHandler: StreamHandler = async ({ type, id }) => {
@@ -133,10 +133,7 @@ builder.defineStreamHandler(streamHandler);
 Use types to ensure your data matches the expected schemas:
 
 ```typescript
-import {
-  type StreamSchema,
-  type MetaPreviewSchema,
-} from "@stremio-addon/validation-zod";
+import { type StreamSchema, type MetaPreviewSchema } from "@stremio-addon/zod";
 
 const stream: StreamSchema = {
   name: "HD Stream",
@@ -199,10 +196,7 @@ serveHTTP(builder.getInterface(), { port: 7000 });
 
 ```typescript
 import express from "express";
-import {
-  AddonBuilder,
-  type ManifestSchema,
-} from "@stremio-addon/validation-zod";
+import { AddonBuilder, type ManifestSchema } from "@stremio-addon/zod";
 import { getRouter } from "@stremio-addon/node-express";
 
 const manifest: ManifestSchema = {
@@ -262,7 +256,7 @@ Let's migrate a complete addon:
 npm uninstall stremio-addon-sdk @types/stremio-addon-sdk
 
 # Install new SDK with zod validation and express runtime
-npm install @stremio-addon/sdk @stremio-addon/validation-zod @stremio-addon/node-express
+npm install @stremio-addon/sdk @stremio-addon/zod @stremio-addon/node-express
 npm install express zod
 npm install -D @types/express typescript
 ```

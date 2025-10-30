@@ -1,4 +1,4 @@
-import { type ManifestSchema } from "@stremio-addon/validation-zod";
+import { type ManifestSchema } from "@stremio-addon/zod";
 
 export const manifest: ManifestSchema = {
   id: "community.stremio.helloworld",

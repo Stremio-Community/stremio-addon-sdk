@@ -5,7 +5,7 @@ This is a simple "Hello World" addon example for Stremio, demonstrating how to c
 This example uses the following packages from this repository:
 
 - `@stremio-addon/sdk` - Core SDK functionalities
-- `@stremio-addon/validation-zod` - For manifest validation using Zod
+- `@stremio-addon/zod` - For manifest validation using Zod
 - `@stremio-addon/node-express` - For running the addon server with Node.js and Express
 
 ## Usage

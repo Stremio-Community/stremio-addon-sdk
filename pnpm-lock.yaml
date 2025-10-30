@@ -34,7 +34,7 @@ importers:
       "@stremio-addon/node-express":
         specifier: workspace:^
         version: link:../../packages/runtime/node-express
-      "@stremio-addon/validation-zod":
+      "@stremio-addon/zod":
         specifier: workspace:^
         version: link:../../packages/validation/zod
       express:
@@ -56,15 +56,15 @@ importers:
 
   packages/compat:
     dependencies:
+      "@stremio-addon/linter":
+        specifier: workspace:*
+        version: link:../validation/linter
       "@stremio-addon/node-express":
         specifier: workspace:*
         version: link:../runtime/node-express
       "@stremio-addon/sdk":
         specifier: workspace:*
         version: link:../sdk
-      "@stremio-addon/validation-addon-linter":
-        specifier: workspace:*
-        version: link:../validation/addon-linter
       express:
         specifier: ^5.1.0
         version: 5.1.0
@@ -139,7 +139,7 @@ importers:
         specifier: ^5.9.2
         version: 5.9.3
 
-  packages/validation/addon-linter:
+  packages/validation/linter:
     dependencies:
       "@stremio-addon/sdk":
         specifier: workspace:^

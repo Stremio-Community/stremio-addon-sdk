@@ -31,7 +31,7 @@
   "dependencies": {
     "@stremio-addon/node-express": "workspace:*",
     "@stremio-addon/sdk": "workspace:*",
-    "@stremio-addon/validation-addon-linter": "workspace:*",
+    "@stremio-addon/linter": "workspace:*",
     "express": "^5.1.0",
     "open": "^10.2.0",
     "stremio-addon-linter": "^1.7.0"

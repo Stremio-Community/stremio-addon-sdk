@@ -1,4 +1,4 @@
-import type { StreamSchema } from "@stremio-addon/validation-zod";
+import type { StreamSchema } from "@stremio-addon/zod";
 import { fromMagnet } from "./utils.js";
 
 /**

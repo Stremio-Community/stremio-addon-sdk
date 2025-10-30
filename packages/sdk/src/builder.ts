@@ -20,19 +20,12 @@ import { validate } from "./validator.js";
 type Handler = (args: HandlerArgs) => Promise<unknown>;
 
 export class AddonBuilder {
-  private readonly handlers = new Map<ShortManifestResource, Handler>();
-  private readonly manifest: Manifest;
+  protected readonly handlers = new Map<ShortManifestResource, Handler>();
+  protected readonly manifest: Manifest;
 
   constructor(data: Manifest, schema?: ManifestSchema) {
-    if (schema) {
-      try {
-        this.manifest = validate(schema, data);
-      } catch (err) {
-        throw new Error(`Invalid manifest: ${err}`);
-      }
-    } else {
-      this.manifest = data;
-    }
+    this.manifest = schema ? validate(schema, data) : data;
+    Object.freeze(this.manifest);
   }
 
   defineResourceHandler(

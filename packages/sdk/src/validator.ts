@@ -10,8 +10,16 @@ export function validate<T extends StandardSchemaV1>(
   }
 
   if (result.issues) {
-    throw new Error(JSON.stringify(result.issues, null, 2));
+    throw new ValidationError(result.issues);
   }
 
   return result.value;
+}
+
+export class ValidationError extends Error {
+  constructor(public issues: readonly StandardSchemaV1.Issue[]) {
+    super(issues[0].message);
+    this.name = "ValidationError";
+    this.issues = issues;
+  }
 }

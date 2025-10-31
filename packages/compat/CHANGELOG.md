@@ -1,5 +1,11 @@
 # @stremio-addon/compat
 
+## 0.0.4
+
+### Patch Changes
+
+- 4f0f0a3: Export landing template
+
 ## 0.0.3
 
 ### Patch Changes

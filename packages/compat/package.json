@@ -4,11 +4,32 @@
   "description": "Drop-in compatibility package to adopt addons built with the official Stremio Addon SDK",
   "type": "module",
   "main": "./dist/index.js",
+  "sideEffects": false,
   "exports": {
     ".": {
       "import": "./dist/index.js",
       "default": "./dist/index.js",
       "types": "./dist/index.d.ts"
+    },
+    "./builder": {
+      "import": "./dist/builder.js",
+      "types": "./dist/builder.d.ts"
+    },
+    "./landing-template": {
+      "import": "./dist/landing-template.js",
+      "types": "./dist/landing-template.d.ts"
+    },
+    "./publish-to-central": {
+      "import": "./dist/publish-to-central.js",
+      "types": "./dist/publish-to-central.d.ts"
+    },
+    "./router": {
+      "import": "./dist/router.js",
+      "types": "./dist/router.d.ts"
+    },
+    "./serve-http": {
+      "import": "./dist/serve-http.js",
+      "types": "./dist/serve-http.d.ts"
     }
   },
   "files": [

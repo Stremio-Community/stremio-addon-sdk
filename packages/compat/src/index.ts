@@ -1,11 +1,4 @@
-import { getRouter } from "@stremio-addon/node-express";
-import { AddonBuilder } from "@stremio-addon/linter";
-import { serveHTTP } from "./serve-http.js";
-import { publishToCentral } from "./publish-to-central.js";
-
-export default {
-  addonBuilder: AddonBuilder,
-  serveHTTP,
-  getRouter,
-  publishToCentral,
-};
+export { AddonBuilder as addonBuilder } from "@stremio-addon/linter";
+export { getRouter } from "@stremio-addon/node-express";
+export { serveHTTP } from "./serve-http.js";
+export { publishToCentral } from "./publish-to-central.js";

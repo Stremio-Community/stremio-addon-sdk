@@ -1,5 +1,11 @@
 # @stremio-addon/compat
 
+## 0.0.3
+
+### Patch Changes
+
+- 1daba2e: Export modules using named exports instead of default export
+
 ## 0.0.2
 
 ### Patch Changes

@@ -34,35 +34,51 @@ See [examples/hello-world](../examples/hello-world/).
 
 ## Hono
 
-> [!WARNING]  
-> This section is a work in progress. Contributions and documentation improvements are welcome!
-
 ### Installation
 
 ```bash
-pnpm add hono hono/cors
+pnpm add hono
 ```
 
 ### Adapter Code
 
 ```typescript
-// hono-adapter.ts
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { createRouter, type AddonInterface } from "@stremio-addon/sdk";
 
 export function getRouter(addonInterface: AddonInterface) {
-  const app = new Hono();
-  app.use("/*", cors());
+  const router = createRouter(addonInterface);
 
-  app.all("/*", async (c) => {
-    const router = createRouter(addonInterface);
-    const response = await router(c.req.raw);
-    return response || c.notFound();
+  const honoRouter = new Hono();
+  honoRouter.use("*", cors());
+  honoRouter.use(async (c, next) => {
+    const req = c.req.raw;
+    const res = await router(req);
+    if (res) {
+      c.res = res;
+    }
+    next();
   });
 
-  return app;
+  return honoRouter;
 }
+```
+
+### usage
+
+```typescript
+import { Hono } from "hono";
+import { addonInterface } from "./addon.js";
+import { getRouter } from "./router.js";
+
+const addonRouter = getRouter(addonInterface);
+
+const app = new Hono();
+
+app.route("/", addonRouter);
+
+export default app;
 ```
 
 ## Cloudflare Workers

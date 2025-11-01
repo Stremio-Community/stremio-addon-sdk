@@ -12,7 +12,10 @@ export function createRouter({ get, manifest }: AddonInterface) {
     const { pathname } = getUrl(request);
     const routePrefix = getRoutePrefix(manifest);
     const resourceHandlers = getResourceHandlers(manifest);
-    const headers = { "Content-Type": "application/json; charset=utf-8" };
+    const headers = {
+      "Content-Type": "application/json; charset=utf-8",
+      "Access-Control-Allow-Origin": "*",
+    };
 
     // Match manifest route.
     const [manifestMatches, manifestMatch] = matchRoute<ManifestParams>(

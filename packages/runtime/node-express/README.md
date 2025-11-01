@@ -7,7 +7,6 @@ Node.js + Express runtime adapter for the Community Stremio Addon SDK.
 ## Features
 
 - 🚀 **Express integration** - Seamless integration with Express.js
-- 🌐 **CORS enabled** - Pre-configured CORS middleware
 - 🎯 **Type-safe** - Full TypeScript support
 - 🔧 **Flexible** - Works with existing Express apps
 
@@ -71,7 +70,7 @@ app.listen(PORT, () => {
 
 ### `getRouter(addonInterface)`
 
-Creates an Express router configured to serve your addon with CORS enabled.
+Creates an Express router configured to serve your addon.
 
 **Parameters:**
 

@@ -1,5 +1,4 @@
 import { Router } from "express";
-import cors from "cors";
 import { createRouter, type AddonInterface } from "@stremio-addon/sdk";
 
 export type Options = {
@@ -11,7 +10,6 @@ export function getRouter(
   options: Options = {},
 ): Router {
   const expressRouter = Router();
-  expressRouter.use(cors());
   expressRouter.use((_, res, next) => {
     const cacheMaxAge = options.cacheMaxAge;
 

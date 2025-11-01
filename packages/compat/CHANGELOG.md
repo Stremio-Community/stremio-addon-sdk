@@ -1,5 +1,14 @@
 # @stremio-addon/compat
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies [ace0870]
+  - @stremio-addon/node-express@0.1.0
+  - @stremio-addon/sdk@0.1.0
+  - @stremio-addon/linter@0.0.3
+
 ## 0.0.5
 
 ### Patch Changes

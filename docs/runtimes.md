@@ -36,9 +36,7 @@ See [examples/hello-world](../examples/hello-world/).
 
 ### Installation
 
-```bash
-pnpm add hono
-```
+See the [Hono documentation](https://hono.dev/docs/) to set up your project.
 
 ### Adapter Code
 
@@ -81,19 +79,13 @@ export default app;
 
 ## Cloudflare Workers
 
-> [!WARNING]  
-> This section is a work in progress. Contributions and documentation improvements are welcome!
-
 ### Installation
 
-```bash
-pnpm add wrangler
-```
+See the [Cloudflare Workers documentation](https://developers.cloudflare.com/workers/get-started/guide/) to set up your project.
 
 ### Adapter Code
 
 ```typescript
-// cloudflare-adapter.ts
 import { createRouter, type AddonInterface } from "@stremio-addon/sdk";
 
 export function getRouter(addonInterface: AddonInterface) {
@@ -101,15 +93,24 @@ export function getRouter(addonInterface: AddonInterface) {
 
   return async (request: Request): Promise<Response> => {
     const response = await router(request);
-
-    if (response) {
-      response.headers.set("Access-Control-Allow-Origin", "*");
-      return response;
-    }
-
-    return new Response("Not Found", { status: 404 });
+    return response ?? new Response("Not Found", { status: 404 });
   };
 }
+```
+
+### Usage
+
+```typescript
+import { getRouter } from "./router.js";
+import { addonInterface } from "./addon.js";
+
+const addonRouter = getRouter(addonInterface);
+
+export default {
+  async fetch(request: Request): Promise<Response> {
+    return addonRouter(request);
+  },
+};
 ```
 
 ## Custom
@@ -136,8 +137,8 @@ Most serverless platforms can skip step 1 and 3 since they use standard `Request
 ### Key Points
 
 - **Null handling**: `createRouter` returns `null` when no route matches
-- **Headers**: Preserve all response headers from the SDK
 - **Standard APIs**: Use Web Standard `Request`/`Response` objects
+- **Headers**: Preserve all response headers from the SDK
 
 ### Resources
 

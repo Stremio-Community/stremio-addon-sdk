@@ -50,13 +50,12 @@ export function getRouter(addonInterface: AddonInterface) {
   const router = createRouter(addonInterface);
 
   const honoRouter = new Hono();
-  honoRouter.use(async (c, next) => {
+  honoRouter.all("*", async (c) => {
     const req = c.req.raw;
     const res = await router(req);
     if (res) {
-      c.res = res;
+      return res;
     }
-    next();
   });
 
   return honoRouter;

@@ -44,14 +44,12 @@ pnpm add hono
 
 ```typescript
 import { Hono } from "hono";
-import { cors } from "hono/cors";
 import { createRouter, type AddonInterface } from "@stremio-addon/sdk";
 
 export function getRouter(addonInterface: AddonInterface) {
   const router = createRouter(addonInterface);
 
   const honoRouter = new Hono();
-  honoRouter.use("*", cors());
   honoRouter.use(async (c, next) => {
     const req = c.req.raw;
     const res = await router(req);
@@ -132,13 +130,11 @@ An adapter must:
 1. Convert framework request -> standard `Request`
 2. Call `createRouter(addonInterface)(request)`
 3. Convert standard `Response` -> framework response
-4. Add CORS headers
 
 Most serverless platforms can skip step 1 and 3 since they use standard `Request`/`Response` objects already.
 
 ### Key Points
 
-- **CORS**: Always enable CORS headers for Stremio web app access
 - **Null handling**: `createRouter` returns `null` when no route matches
 - **Headers**: Preserve all response headers from the SDK
 - **Standard APIs**: Use Web Standard `Request`/`Response` objects

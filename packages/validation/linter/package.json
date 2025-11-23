@@ -1,6 +1,6 @@
 {
   "name": "@stremio-addon/linter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Community Stremio Addon SDK validation using stremio-addon-linter",
   "type": "module",
   "main": "./dist/index.js",

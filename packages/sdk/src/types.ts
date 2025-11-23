@@ -627,6 +627,8 @@ export interface Manifest {
         configurationRequired?: boolean;
       }
     | undefined;
+
+  stremioAddonsConfig?: StremioAddonsConfig;
 }
 
 export type ManifestConfigType =
@@ -760,6 +762,11 @@ export interface ManifestExtra {
    * By default this is set to 1.
    */
   optionsLimit?: number;
+}
+
+export interface StremioAddonsConfig {
+  issuer: "https://stremio-addons.net";
+  signature: string;
 }
 
 /**

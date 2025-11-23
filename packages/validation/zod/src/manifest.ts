@@ -568,6 +568,14 @@ export const addonCatalogSchema = z.object({
 });
 export type AddonCatalogSchema = z.infer<typeof addonCatalogSchema>;
 
+export const stremioAddonsConfigSchema = z.object({
+  issuer: z.literal("https://stremio-addons.net"),
+  signature: z.string(),
+});
+export type StremioAddonsConfigSchema = z.infer<
+  typeof stremioAddonsConfigSchema
+>;
+
 /**
  * The addon description and capabilities.
  *
@@ -670,6 +678,7 @@ export const manifestSchema = z.object({
       configurationRequired: z.boolean().optional(),
     })
     .optional(),
+  stremioAddonsConfig: stremioAddonsConfigSchema.optional(),
 }) satisfies StandardManifestSchema;
 
 export type ManifestSchema = z.infer<typeof manifestSchema>;

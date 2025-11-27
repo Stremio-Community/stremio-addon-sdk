@@ -1,5 +1,14 @@
 # @stremio-addon/compat
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [[`9afde84`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/9afde84a2adab5526bb5078531af1735b5501a6b)]:
+  - @stremio-addon/sdk@0.3.0
+  - @stremio-addon/node-express@0.1.2
+  - @stremio-addon/linter@0.0.5
+
 ## 0.0.7
 
 ### Patch Changes

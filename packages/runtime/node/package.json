@@ -1,6 +1,6 @@
 {
   "name": "@stremio-addon/node",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Node runtime for the Community Stremio Addon SDK",
   "type": "module",
   "main": "./dist/index.js",

@@ -398,9 +398,55 @@ export interface Stream {
    */
   infoHash?: string;
   /**
-   * The index of the video file within the torrent (from infoHash).
+   * A string representing a regex (example: `/.mkv$|.mp4$|.avi$|.ts$/i`) to match the video file within the nzb (from nzbUrl), rar (from rarUrls, zip (from zipUrls), 7zip (from 7zipUrls), tgz (from tgzUrls), tar (from tarUrls)); (not supported for torrents yet).
+   */
+  fileMustInclude?: string;
+  /**
+   * Http(s) or ftp(s) link to a NZB (usenet) file.
+   * This source will also unpack any known archive files.
+   */
+  nzbUrl?: string;
+  /**
+   * List of strings that each represent a connection to a NNTP (usenet) server (for nzbUrl) in the form of `nntp(s)://{user}:{pass}@{nntpDomain}:{nntpPort}/{nntpConnections}` (nntps = SSL; nntp = no encryption)
+   * @example `nntps://myuser:mypass@news.example.com/4`
+   */
+  servers?: string[];
+  /**
+   * Stream sources that lead to rar files (multi-volume supported).
+   * Limitation: multi-volume and seeking in the video supported, decompression is not supported (decompression is not normally required for audio / video files).
+   */
+  rarUrls?: StreamSource[];
+  /**
+   * Stream sources that lead to zip files (multi-volume supported).
+   * Limitation: multi-volume and decompression are supported, it does not support seeking in the video.
+   */
+  zipUrls?: StreamSource[];
+  /**
+   * Stream sources that lead to 7z files (multi-volume supported).
+   * Limitation: multi-volume and LZMA decompression are support, it supports seeking only when compression is not used (decompression is not normally required for audio / video files)
+   */
+  "7zipUrls"?: StreamSource[];
+  /**
+   * Stream sources that lead to tgz files (multi-volume supported).
+   * Limitation: multi-volume and decompression are supported, it does not support seeking in the video.
+   */
+  tgzUrls?: StreamSource[];
+  /**
+   * Stream sources that lead to tar files (TAR does not support multi-volume).
+   * Limitation: does not support multi-volume and decompression by design (tar only merges multiple files into one without compressing), seeking is supported.
+   */
+  tarUrls?: StreamSource[];
+  /**
+   * The index of the video file within the:
+   * - torrent (from infoHash)
+   * - nzb (from nzbUrl)
+   * - rar (from rarUrls)
+   * - zip (from zipUrls)
+   * - 7zip (from 7zipUrls)
+   * - tgz (from tgzUrls)
+   * - tar (from tarUrls)
    *
-   * If fileIdx is not specified, the largest file in the torrent will be selected.
+   * If fileIdx is not specified, the largest file in the torrent will be selected (torrent only).
    */
   fileIdx?: number;
   /**
@@ -501,6 +547,23 @@ export interface Stream {
         filename?: string;
       }
     | undefined;
+}
+
+/**
+ * An object representing a streaming source.
+ */
+export interface StreamSource {
+  /**
+   * Direct http(s)/ftp(s) link to a file.
+   * Depending on context: zip, rar, 7z, tar, tgz.
+   */
+  url: string;
+
+  /**
+   * Size of the file in bytes.
+   * While optional, adding this can speed up the initial buffering.
+   */
+  bytes?: number;
 }
 
 /**

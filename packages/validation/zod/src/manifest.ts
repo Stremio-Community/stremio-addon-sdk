@@ -67,6 +67,24 @@ export const subtitleSchema = z.object({
 export type SubtitleSchema = z.infer<typeof subtitleSchema>;
 
 /**
+ * An object representing a streaming source.
+ */
+export const streamSourceSchema = z.object({
+  /**
+   * Direct http(s)/ftp(s) link to a file.
+   * Depending on context: zip, rar, 7z, tar, tgz.
+   */
+  url: z.string(),
+
+  /**
+   * Size of the file in bytes.
+   * While optional, adding this can speed up the initial buffering.
+   */
+  bytes: z.number().optional(),
+});
+export type StreamSourceSchema = z.infer<typeof streamSourceSchema>;
+
+/**
  * Tells Stremio how to obtain the media content.
  *
  * It may be torrent info hash, HTTP URL, etc.
@@ -87,9 +105,16 @@ export const streamSchema = z.object({
    */
   infoHash: z.string().optional(),
   /**
-   * The index of the video file within the torrent (from infoHash).
+   * The index of the video file within the:
+   * - torrent (from infoHash)
+   * - nzb (from nzbUrl)
+   * - rar (from rarUrls)
+   * - zip (from zipUrls)
+   * - 7zip (from 7zipUrls)
+   * - tgz (from tgzUrls)
+   * - tar (from tarUrls)
    *
-   * If fileIdx is not specified, the largest file in the torrent will be selected.
+   * If fileIdx is not specified, the largest file in the torrent will be selected (torrent only).
    */
   fileIdx: z.number().optional(),
   /**
@@ -130,6 +155,45 @@ export const streamSchema = z.object({
    * WARNING: Use of DHT may be prohibited by some private trackers as it exposes torrent activity to a broader network.
    */
   sources: z.array(z.string()).optional(),
+  /**
+   * A string representing a regex (example: `/.mkv$|.mp4$|.avi$|.ts$/i`) to match the video file within the nzb (from nzbUrl), rar (from rarUrls, zip (from zipUrls), 7zip (from 7zipUrls), tgz (from tgzUrls), tar (from tarUrls)); (not supported for torrents yet).
+   */
+  fileMustInclude: z.string().optional(),
+  /**
+   * Http(s) or ftp(s) link to a NZB (usenet) file.
+   * This source will also unpack any known archive files.
+   */
+  nzbUrl: z.string().optional(),
+  /**
+   * List of strings that each represent a connection to a NNTP (usenet) server (for nzbUrl) in the form of `nntp(s)://{user}:{pass}@{nntpDomain}:{nntpPort}/{nntpConnections}` (nntps = SSL; nntp = no encryption)
+   * @example `nntps://myuser:mypass@news.example.com/4`
+   */
+  servers: z.array(z.string()).optional(),
+  /**
+   * Stream sources that lead to rar files (multi-volume supported).
+   * Limitation: multi-volume and seeking in the video supported, decompression is not supported (decompression is not normally required for audio / video files).
+   */
+  rarUrls: z.array(streamSourceSchema).optional(),
+  /**
+   * Stream sources that lead to zip files (multi-volume supported).
+   * Limitation: multi-volume and decompression are supported, it does not support seeking in the video.
+   */
+  zipUrls: z.array(streamSourceSchema).optional(),
+  /**
+   * Stream sources that lead to 7z files (multi-volume supported).
+   * Limitation: multi-volume and LZMA decompression are support, it supports seeking only when compression is not used (decompression is not normally required for audio / video files)
+   */
+  "7zipUrls": z.array(streamSourceSchema).optional(),
+  /**
+   * Stream sources that lead to tgz files (multi-volume supported).
+   * Limitation: multi-volume and decompression are supported, it does not support seeking in the video.
+   */
+  tgzUrls: z.array(streamSourceSchema).optional(),
+  /**
+   * Stream sources that lead to tar files (TAR does not support multi-volume).
+   * Limitation: does not support multi-volume and decompression by design (tar only merges multiple files into one without compressing), seeking is supported.
+   */
+  tarUrls: z.array(streamSourceSchema).optional(),
   behaviorHints: z
     .object({
       /**

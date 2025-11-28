@@ -1,5 +1,11 @@
 # @stremio-addon/sdk
 
+## 0.3.1
+
+### Patch Changes
+
+- [#27](https://github.com/Stremio-Community/stremio-addon-sdk/pull/27) [`5e8299d`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/5e8299d19ee169a2eb269a7671bd34de4bc52907) Thanks [@sleeyax](https://github.com/sleeyax)! - Fix config prefix logic for configurable addons
+
 ## 0.3.0
 
 ### Minor Changes

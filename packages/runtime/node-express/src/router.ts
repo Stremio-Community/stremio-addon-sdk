@@ -22,7 +22,7 @@ export function getRouter(
   expressRouter.use(async (expressRequest, expressResponse, next) => {
     // Convert an Express Request to a Request.
     const url = new URL(
-      expressRequest.originalUrl,
+      expressRequest.url,
       `http://${expressRequest.headers.host || "localhost"}`,
     );
     const req = new globalThis.Request(url, {

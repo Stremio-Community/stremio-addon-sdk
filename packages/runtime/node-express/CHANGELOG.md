@@ -1,5 +1,11 @@
 # @stremio-addon/node-express
 
+## 0.1.3
+
+### Patch Changes
+
+- [#25](https://github.com/Stremio-Community/stremio-addon-sdk/pull/25) [`b2ae98a`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/b2ae98a126ef21c49705940db9f9c23aebead9fc) Thanks [@sleeyax](https://github.com/sleeyax)! - Fix to correctly resolve addon routes when mounted at a path prefix
+
 ## 0.1.2
 
 ### Patch Changes

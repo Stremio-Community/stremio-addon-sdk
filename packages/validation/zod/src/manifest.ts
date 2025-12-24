@@ -392,7 +392,7 @@ export const metaPreviewSchema = z.object({
    *
    * URL to PNG.
    */
-  logo: z.string().optional(),
+  logo: z.url().optional(),
   /**
    * A few sentences describing your content.
    */
@@ -711,7 +711,7 @@ export const manifestSchema = z.object({
   /**
    * Logo icon, URL to png, monochrome, 256x256.
    */
-  logo: z.string().optional(),
+  logo: z.url().optional(),
   /**
    * Contact email for addon issues.
    * Used for the Report button in the app.

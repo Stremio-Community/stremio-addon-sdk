@@ -1,5 +1,11 @@
 # @stremio-addon/zod
 
+## 0.2.2
+
+### Patch Changes
+
+- [#31](https://github.com/Stremio-Community/stremio-addon-sdk/pull/31) [`c5ae858`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/c5ae858d764672b58f59b0a1e856e0c1de8a3793) Thanks [@sleeyax](https://github.com/sleeyax)! - change logo field type to URL in manifest schemas
+
 ## 0.2.1
 
 ### Patch Changes

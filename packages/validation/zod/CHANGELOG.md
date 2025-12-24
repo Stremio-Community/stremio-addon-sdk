@@ -1,5 +1,11 @@
 # @stremio-addon/zod
 
+## 0.2.1
+
+### Patch Changes
+
+- [#29](https://github.com/Stremio-Community/stremio-addon-sdk/pull/29) [`36dd933`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/36dd933dc12128ab73c47fe40ee2b9d9f0f5f816) Thanks [@sleeyax](https://github.com/sleeyax)! - add backwards compatibility with zod 3
+
 ## 0.2.0
 
 ### Minor Changes

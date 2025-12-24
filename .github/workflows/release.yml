@@ -11,6 +11,7 @@ env:
 permissions:
   contents: write
   pull-requests: write
+  id-token: write
 
 # Cancels in-progress runs when a new commit is pushed to the same branch.
 concurrency: ${{ github.workflow }}-${{ github.ref }}

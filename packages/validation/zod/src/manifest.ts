@@ -1,4 +1,4 @@
-import z from "zod";
+import z from "zod/v4";
 import type { ManifestSchema as StandardManifestSchema } from "@stremio-addon/sdk";
 
 export const shortManifestResourceSchema = z.enum([

@@ -1,5 +1,11 @@
 # @stremio-addon/sdk
 
+## 0.3.2
+
+### Patch Changes
+
+- [#37](https://github.com/Stremio-Community/stremio-addon-sdk/pull/37) [`56d4ebf`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/56d4ebfc4ae3d6d3f8efca455666379422bb268f) Thanks [@sleeyax](https://github.com/sleeyax)! - allow catalog `type` to contain custom string
+
 ## 0.3.1
 
 ### Patch Changes

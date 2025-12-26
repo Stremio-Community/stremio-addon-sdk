@@ -1,5 +1,16 @@
 # @stremio-addon/zod
 
+## 0.2.3
+
+### Patch Changes
+
+- [#37](https://github.com/Stremio-Community/stremio-addon-sdk/pull/37) [`56d4ebf`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/56d4ebfc4ae3d6d3f8efca455666379422bb268f) Thanks [@sleeyax](https://github.com/sleeyax)! - allow catalog `type` to contain custom string
+
+- [#35](https://github.com/Stremio-Community/stremio-addon-sdk/pull/35) [`64ef70d`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/64ef70d506884f96b3b7ce2954c3bbab069159e8) Thanks [@sleeyax](https://github.com/sleeyax)! - enforce `httpUrl` instead of `url` for image URLs
+
+- Updated dependencies [[`56d4ebf`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/56d4ebfc4ae3d6d3f8efca455666379422bb268f)]:
+  - @stremio-addon/sdk@0.3.2
+
 ## 0.2.2
 
 ### Patch Changes

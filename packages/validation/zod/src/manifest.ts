@@ -570,7 +570,7 @@ export const manifestCatalogSchema = z.object({
   /**
    *  This is the content type of the catalog.
    */
-  type: contentTypeSchema,
+  type: z.string(),
   /**
    * The id of the catalog, can be any unique string describing the catalog (unique per addon, as an addon can have many catalogs).
    *
@@ -601,7 +601,7 @@ export const fullManifestResourceSchema = z.object({
   /**
    * Supported types.
    */
-  types: z.array(contentTypeSchema),
+  types: z.array(z.string()),
   /**
    * Use this if you want your addon to be called only for specific content IDs
    *
@@ -675,7 +675,7 @@ export const manifestSchema = z.object({
   /**
    * Supported types.
    */
-  types: z.array(contentTypeSchema),
+  types: z.array(z.string()),
   /**
    * Use this if you want your addon to be called only for specific content IDs.
    *

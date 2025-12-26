@@ -617,7 +617,7 @@ export interface Manifest {
   /**
    * Supported types.
    */
-  types: ContentType[];
+  types: string[];
   /**
    * Use this if you want your addon to be called only for specific content IDs.
    *
@@ -762,7 +762,7 @@ export interface FullManifestResource {
   /**
    * Supported types.
    */
-  types: ContentType[];
+  types: string[];
   /**
    * Use this if you want your addon to be called only for specific content IDs
    *
@@ -775,7 +775,7 @@ export interface ManifestCatalog {
   /**
    *  This is the content type of the catalog.
    */
-  type: ContentType;
+  type: string;
   /**
    * The id of the catalog, can be any unique string describing the catalog (unique per addon, as an addon can have many catalogs).
    *

@@ -540,8 +540,10 @@ export const manifestExtraSchema = z.object({
    * The name of the property
    *
    * This name will be used in the extraProps argument itself.
+   *
+   * @example "search", "genre", "skip"
    */
-  name: extraSchema,
+  name: z.string(),
   /**
    * Set to true if this property must always be passed.
    */

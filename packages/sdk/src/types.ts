@@ -802,8 +802,10 @@ export interface ManifestExtra {
    * The name of the property
    *
    * This name will be used in the extraProps argument itself.
+   *
+   * @example "search", "genre", "skip"
    */
-  name: Extra;
+  name: string;
   /**
    * Set to true if this property must always be passed.
    */

@@ -1,5 +1,11 @@
 # @stremio-addon/sdk
 
+## 0.3.3
+
+### Patch Changes
+
+- [#39](https://github.com/Stremio-Community/stremio-addon-sdk/pull/39) [`995f7df`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/995f7df7d2245be1ea55faff9a3740dc5d6a21d6) Thanks [@sleeyax](https://github.com/sleeyax)! - allow manifest extra name to contain custom string
+
 ## 0.3.2
 
 ### Patch Changes

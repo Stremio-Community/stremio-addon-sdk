@@ -106,7 +106,7 @@ function getUrl(req: Request) {
 
 function getRoutePrefix(manifest: Manifest) {
   const hasConfig =
-    (manifest.config ?? []).length || manifest.behaviorHints?.configurable;
+    (manifest.config ?? []).length || manifest.behaviorHints?.configurationRequired;
   return hasConfig ? "{/:config}" : "";
 }
 

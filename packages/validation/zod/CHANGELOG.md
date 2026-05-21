@@ -1,5 +1,18 @@
 # @stremio-addon/zod
 
+## 0.3.0
+
+### Minor Changes
+
+- [#47](https://github.com/Stremio-Community/stremio-addon-sdk/pull/47) [`4699f96`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/4699f96aa39685a7ed5f1939691e0dc3e78d1216) Thanks [@sleeyax](https://github.com/sleeyax)! - feat: opt-in response validation in `AddonBuilder`
+
+  Pass `{ validateResponses: true }` to validate handler return values against the zod response schemas (`streamResponseSchema`, `metaResponseSchema`, `catalogResponseSchema`, `subtitlesResponseSchema`, `addonCatalogResponseSchema`). Off by default for performance. An optional `onValidationError` callback can intercept failures (log-only, custom error, etc.) instead of letting `ValidationError` propagate.
+
+### Patch Changes
+
+- Updated dependencies [[`91a2dea`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/91a2deacc1daf889bb2930075ce518e8698430d6)]:
+  - @stremio-addon/sdk@0.3.4
+
 ## 0.2.4
 
 ### Patch Changes

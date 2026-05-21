@@ -39,7 +39,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "build": "tsc",
-    "build:watch": "tsc --watch"
+    "build:watch": "tsc --watch",
+    "typecheck": "tsc --noEmit"
   },
   "license": "MIT",
   "repository": {

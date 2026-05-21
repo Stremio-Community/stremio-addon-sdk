@@ -13,9 +13,6 @@ A modern SDK for building [Stremio](https://www.stremio.com/) addons with TypeSc
 
 ## 📦 Installation
 
-> [!NOTE]  
-> This project is in active development. Version `0.x.y` is usable but may introduce breaking changes between minor releases. The upcoming version `1.x.y` will mark the first stable release with semantic versioning guarantees.
-
 ## 1. Install the SDK package
 
 ```bash

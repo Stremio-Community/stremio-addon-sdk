@@ -748,3 +748,30 @@ export const manifestSchema = z.object({
 }) satisfies StandardManifestSchema;
 
 export type ManifestSchema = z.infer<typeof manifestSchema>;
+
+export const streamResponseSchema = z
+  .object({ streams: z.array(streamSchema) })
+  .extend(cacheSchema.shape);
+export type StreamResponseSchema = z.infer<typeof streamResponseSchema>;
+
+export const metaResponseSchema = z
+  .object({ meta: metaDetailSchema })
+  .extend(cacheSchema.shape);
+export type MetaResponseSchema = z.infer<typeof metaResponseSchema>;
+
+export const catalogResponseSchema = z
+  .object({ metas: z.array(metaPreviewSchema) })
+  .extend(cacheSchema.shape);
+export type CatalogResponseSchema = z.infer<typeof catalogResponseSchema>;
+
+export const subtitlesResponseSchema = z
+  .object({ subtitles: z.array(subtitleSchema) })
+  .extend(cacheSchema.shape);
+export type SubtitlesResponseSchema = z.infer<typeof subtitlesResponseSchema>;
+
+export const addonCatalogResponseSchema = z
+  .object({ addons: z.array(addonCatalogSchema) })
+  .extend(cacheSchema.shape);
+export type AddonCatalogResponseSchema = z.infer<
+  typeof addonCatalogResponseSchema
+>;

@@ -42,6 +42,10 @@ pnpm add @stremio-addon/linter stremio-addon-linter
 
 See [supported runtimes](./docs/runtimes.md).
 
+## 4. (Optional) Add a frontend / configuration UI
+
+Frontends are intentionally out of scope. See [docs/frontend.md](./docs/frontend.md) for the reasoning and how to add your own.
+
 ## 📖 Usage
 
 See [examples](./examples/).

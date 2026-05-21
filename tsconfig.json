@@ -11,5 +11,6 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true
-  }
+  },
+  "exclude": ["**/*.test.ts", "**/__fixtures__.ts", "**/__fixtures__/**"]
 }

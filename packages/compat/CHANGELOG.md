@@ -1,5 +1,18 @@
 # @stremio-addon/compat
 
+## 1.0.0
+
+### Major Changes
+
+- [#49](https://github.com/Stremio-Community/stremio-addon-sdk/pull/49) [`573a3c2`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/573a3c26dbb710541a13f1995bbfdbb0a24a4a7b) Thanks [@sleeyax](https://github.com/sleeyax)! - Release v1.
+
+### Patch Changes
+
+- Updated dependencies [[`573a3c2`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/573a3c26dbb710541a13f1995bbfdbb0a24a4a7b)]:
+  - @stremio-addon/sdk@1.0.0
+  - @stremio-addon/node-express@1.0.0
+  - @stremio-addon/linter@1.0.0
+
 ## 0.0.13
 
 ### Patch Changes

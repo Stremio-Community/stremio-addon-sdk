@@ -9,12 +9,9 @@ A modern SDK for building [Stremio](https://www.stremio.com/) addons with TypeSc
 - 🚀 **Modern** - ESM-first, tree-shakeable
 - 🧩 **Modular** - Composable packages for different use cases
 - 📦 **Multiple runtimes** - Supports Node.js, Node.js + Express, hono, vercel, cloudflare workers etc. (or bring your own runtime)
-- 🔧 **Easy migration** - The API is similar to the official SDK making it easy to switch
+- 🔧 **Easy migration** - Use our compat package for a drop-in replacement or fully switch in a matter of minutes. The API is designed to be as similar to the official SDK as possible.
 
 ## 📦 Installation
-
-> [!NOTE]  
-> This project is in active development. Version `0.x.y` is usable but may introduce breaking changes between minor releases. The upcoming version `1.x.y` will mark the first stable release with semantic versioning guarantees.
 
 ## 1. Install the SDK package
 

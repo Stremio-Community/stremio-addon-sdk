@@ -131,6 +131,20 @@ describe("AddonBuilder (zod) response validation", () => {
       ).rejects.toThrow("custom");
     });
 
+    it("awaits async callbacks and propagates their rejections", async () => {
+      const builder = new AddonBuilder(basicManifest, {
+        validateResponses: true,
+        onValidationError: async () => {
+          await Promise.resolve();
+          throw new Error("async-custom");
+        },
+      }).defineStreamHandler(async () => ({ streams: "x" }) as any);
+
+      await expect(
+        builder.getInterface().get("stream", "movie", "tt1"),
+      ).rejects.toThrow("async-custom");
+    });
+
     it("is not called when validation passes", async () => {
       const onValidationError = vi.fn();
       const builder = new AddonBuilder(basicManifest, {

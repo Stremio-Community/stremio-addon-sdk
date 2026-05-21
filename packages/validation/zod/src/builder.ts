@@ -31,7 +31,7 @@ export interface AddonBuilderOptions {
   onValidationError?: (
     error: ValidationError,
     ctx: { resource: ShortManifestResource; value: unknown },
-  ) => void;
+  ) => void | Promise<void>;
 }
 
 const responseSchemas: Record<ShortManifestResource, z.ZodType> = {
@@ -71,7 +71,7 @@ export class AddonBuilder extends BaseAddonBuilder {
         return validate(schema, value);
       } catch (error) {
         if (error instanceof ValidationError && onValidationError) {
-          onValidationError(error, { resource, value });
+          await onValidationError(error, { resource, value });
           return value;
         }
         throw error;

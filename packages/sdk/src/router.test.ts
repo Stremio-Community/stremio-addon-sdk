@@ -438,4 +438,72 @@ describe("createRouter", () => {
       expect(calls[0].resource).toBe("catalog");
     });
   });
+
+  // The Fetch API requires absolute URLs on `new Request(...)`, so we construct a duck-typed Request to exercise the relative-URL branch of `getUrl`.
+  // This branch is hit in practice when the SDK is wrapped by Node/Express adapters (see @stremio-addon/compat).
+  describe("relative URL handling", () => {
+    function fakeRequest(url: string, host: string | null): Request {
+      return {
+        url,
+        headers: { get: (name: string) => (name === "host" ? host : null) },
+      } as unknown as Request;
+    }
+
+    it("uses the host header when url is relative", async () => {
+      const router = createRouter(makeAddon(basicManifest));
+
+      const res = await router(
+        fakeRequest("/manifest.json", "example.com:8080"),
+      );
+
+      expect(res!.status).toBe(200);
+      expect(await readJson(res!)).toEqual(basicManifest);
+    });
+
+    it("falls back to localhost when host header is missing", async () => {
+      const router = createRouter(makeAddon(basicManifest));
+
+      const res = await router(fakeRequest("/manifest.json", null));
+
+      expect(res!.status).toBe(200);
+      expect(await readJson(res!)).toEqual(basicManifest);
+    });
+  });
+
+  describe("full-form resource objects in manifest", () => {
+    it("routes when resources contains a FullManifestResource", async () => {
+      const manifest: Manifest = {
+        ...basicManifest,
+        resources: [
+          { name: "stream", types: ["movie"], idPrefixes: ["tt"] },
+          { name: "meta", types: ["movie", "series"] },
+        ],
+        catalogs: [],
+      };
+      const { addon, calls } = spyAddon(manifest, bigBuckBunnyStream);
+      const router = createRouter(addon);
+
+      const res = await router(
+        new Request(`${BASE}/stream/movie/tt1254207.json`),
+      );
+
+      expect(res!.status).toBe(200);
+      expect(calls[0].resource).toBe("stream");
+    });
+
+    it("404s for a resource not listed in the full-form resources array", async () => {
+      const manifest: Manifest = {
+        ...basicManifest,
+        resources: [{ name: "stream", types: ["movie"] }],
+        catalogs: [],
+      };
+      const router = createRouter(makeAddon(manifest));
+
+      const res = await router(
+        new Request(`${BASE}/subtitles/movie/tt1254207.json`),
+      );
+
+      expect(res!.status).toBe(404);
+    });
+  });
 });

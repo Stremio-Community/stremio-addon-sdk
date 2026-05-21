@@ -1,5 +1,13 @@
 # @stremio-addon/sdk
 
+## 0.3.4
+
+### Patch Changes
+
+- [#42](https://github.com/Stremio-Community/stremio-addon-sdk/pull/42) [`91a2dea`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/91a2deacc1daf889bb2930075ce518e8698430d6) Thanks [@sleeyax](https://github.com/sleeyax)! - fix: resolve route ambiguity when `behaviorHints.configurable=true`
+
+  The optional `{/:config}` prefix was greedily matched by `path-to-regexp`, causing URLs like `/catalog/series/foo/skip=20.json` to be parsed as `config=catalog, resource=series, ...` and return "resource not found". The router now inspects the URL's first path segment: if it's a known resource or `manifest.json`, no config prefix is used; otherwise it's treated as the config segment.
+
 ## 0.3.3
 
 ### Patch Changes

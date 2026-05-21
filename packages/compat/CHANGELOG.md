@@ -1,5 +1,12 @@
 # @stremio-addon/compat
 
+## 0.0.13
+
+### Patch Changes
+
+- Updated dependencies [[`91a2dea`](https://github.com/Stremio-Community/stremio-addon-sdk/commit/91a2deacc1daf889bb2930075ce518e8698430d6)]:
+  - @stremio-addon/sdk@0.3.4
+
 ## 0.0.12
 
 ### Patch Changes

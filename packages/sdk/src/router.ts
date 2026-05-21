@@ -10,8 +10,8 @@ import { match, type ParamData, type Path } from "path-to-regexp";
 export function createRouter({ get, manifest }: AddonInterface) {
   return async function router(request: Request): Promise<Response | null> {
     const { pathname } = getUrl(request);
-    const routePrefix = getRoutePrefix(manifest);
     const resourceHandlers = getResourceHandlers(manifest);
+    const routePrefix = getRoutePrefix(manifest, pathname, resourceHandlers);
     const headers = {
       "Content-Type": "application/json; charset=utf-8",
       "Access-Control-Allow-Origin": "*",
@@ -104,10 +104,24 @@ function getUrl(req: Request) {
   return new URL(`http://${host || "localhost"}${req.url}`);
 }
 
-function getRoutePrefix(manifest: Manifest) {
+function getRoutePrefix(
+  manifest: Manifest,
+  pathname: string,
+  resourceHandlers: Set<string>,
+) {
   const hasConfig =
     (manifest.config ?? []).length || manifest.behaviorHints?.configurable;
-  return hasConfig ? "{/:config}" : "";
+  if (!hasConfig) return "";
+
+  // path-to-regexp v8's `{/:config}` matches greedily, so inspect the first
+  // path segment instead: if it's a known resource or `manifest.json`, the
+  // URL has no config prefix; otherwise treat it as the config segment.
+  const firstSegment = pathname.split("/")[1] ?? "";
+  if (firstSegment === "manifest.json" || resourceHandlers.has(firstSegment)) {
+    return "";
+  }
+
+  return "/:config";
 }
 
 function getResourceHandlers(manifest: Manifest) {

@@ -34,13 +34,13 @@ export interface AddonBuilderOptions {
   ) => void;
 }
 
-const responseSchemas = {
+const responseSchemas: Record<ShortManifestResource, z.ZodType> = {
   stream: streamResponseSchema,
   meta: metaResponseSchema,
   catalog: catalogResponseSchema,
   subtitles: subtitlesResponseSchema,
   addon_catalog: addonCatalogResponseSchema,
-} as const satisfies Record<ShortManifestResource, unknown>;
+};
 
 export class AddonBuilder extends BaseAddonBuilder {
   private readonly validateResponses: boolean;
@@ -68,7 +68,7 @@ export class AddonBuilder extends BaseAddonBuilder {
     const wrapped = async (args: any) => {
       const value = await handler(args);
       try {
-        return validate(schema, value as never);
+        return validate(schema, value);
       } catch (error) {
         if (error instanceof ValidationError && onValidationError) {
           onValidationError(error, { resource, value });
